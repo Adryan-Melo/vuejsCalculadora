@@ -1,35 +1,16 @@
-<script >
-export default {
-  data() {
-    return {
-      numero1: 0,
-      numero2: 0,
-      operacao: '+',
-    };
-  },
-  computed: {
-    resultado() {
-      let n1 = parseFloat(this.numero1);
-      let n2 = parseFloat(this.numero2);
+import {cal} from ./components/cal.vue
 
-      switch (this.operacao) {
-        case '+':
-          return n1 + n2;
-        case '-':
-          return n1 - n2;
-        case '*':
-          return n1 * n2;
-        case '/':
-          return n2 !== 0 ? n1 / n2 : 'Divisão por zero!';
-        default:
-          return 0;
-      }
-    }
-  }
+<script >
+import Calcular from './components/cal.vue'
+export default {
+  name: 'App',
+  mixins: [Calcular], 
 };
 </script>
 
 <template>
+
+
   <div id="app" class="calculadora">
     <h1>Calculadora</h1>
 
